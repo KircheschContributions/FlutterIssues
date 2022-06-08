@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "613316955342",
+    "project_id": "kirchesch-public-tests",
+    "storage_bucket": "kirchesch-public-tests.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613316955342:android:3581440e20ef9cb715149f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_issues"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613316955342-g311stcksjjfku8ahoik6bqn33h1guv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6NGHD_43KtT5RGNZbaCLEmGd5lFmr6kU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613316955342-g311stcksjjfku8ahoik6bqn33h1guv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
