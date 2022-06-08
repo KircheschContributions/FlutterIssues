@@ -37,6 +37,9 @@ dependencies:
   firebase_auth: ^3.3.19
   firebase_core: ^1.17.1
 
+  provider:
+    git: https://github.com/KircheschContributions/provider
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

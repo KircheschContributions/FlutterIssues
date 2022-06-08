@@ -4,8 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_issues/firebase_options.dart';
 
-// ignore: non_constant_identifier_names
-Future<void> UserChangesStreamingOldDataMain() async {
+Future<void> userChangesStreamingOldDataMain() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
