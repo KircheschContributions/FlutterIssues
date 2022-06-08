@@ -1,11 +1,11 @@
 import 'dart:math';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_issues/firebase_options.dart';
 
-Future<void> main() async {
+// ignore: non_constant_identifier_names
+Future<void> UserChangesStreamingOldDataMain() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
         body: StreamBuilder(
           stream: FirebaseAuth.instance.userChanges(),
           builder: (context, AsyncSnapshot<User?> snapshot) {
+            print("user state updated $snapshot");
+
             String results;
 
             if (snapshot.hasData) {
@@ -48,12 +50,17 @@ class MyApp extends StatelessWidget {
               if (snapshot.hasData) {
                 User user = snapshot.data!;
                 if (user.isAnonymous) {
-                  // To do : Link user
+                  user.linkWithCredential(
+                    EmailAuthProvider.credential(
+                      email: "${Random().nextInt(10000)}@fakemail.com",
+                      password: "nopassword",
+                    ),
+                  );
                 } else {
-                  // To do : disconect user
+                  FirebaseAuth.instance.signOut();
                 }
               } else {
-                // to do : sign in anonymously
+                FirebaseAuth.instance.signInAnonymously();
               }
             }
 
